@@ -1,3 +1,5 @@
+# create a secure client
+
 Create a directory for certificates and a safe directory for the CA key:
 
 ```shell
@@ -31,7 +33,7 @@ $(hostname) \
 generate `node.crt` and `node.key` in `cert/`, will be used to secure communication between nodes. Typically, you would generate these separately for each node since each node has unique addresses; in this case, however, since all nodes will be running locally, you need to generate only one node certificate and key.
 
 start node
-```shell
+```sh
 $ cockroach start \
 --certs-dir=certs
 ```
@@ -42,7 +44,7 @@ $ cockroach sql --certs-dir=certs
 ```
 
 create user and set password
-```shell
+```sql
 > CREATE USER txiaozhe WITH PASSWORD '123456';
 ```
-now we can login Admin UI([http://127.0.0.1:8080](http://127.0.0.1:8080)) use this username and password.
+now we can login Admin UI([https://127.0.0.1:8080](https://127.0.0.1:8080)) use this username and password.
